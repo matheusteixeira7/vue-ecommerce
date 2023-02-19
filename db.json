@@ -92,7 +92,7 @@
       "inStock": true,
       "name": "Basic Tee",
       "price": 30,
-      "quantity": 2,
+      "quantity": 1,
       "size": "Large"
     },
     {
@@ -118,46 +118,40 @@
       "inStock": true,
       "name": "Nomad Tumbler",
       "price": 35,
-      "quantity": 2
+      "quantity": 1
     }
   ],
   "products": [
     {
       "id": "1",
-      "category": "Knife Set",
+      "category": "men",
+      "subcategory": "tees",
       "size": "Large",
-      "name": "HENCKELS Premium Quality 15-Piece Knife Set with Block, Razor-Sharp",
-      "price": 140,
+      "name": "Striped Logo Icon Crew T-Shirt",
+      "price": 19.95,
       "rating": 4,
       "images": [
         {
           "id": "db7527b2-c870-425c-9b65-c20cc2d88541",
           "name": "Angled view",
-          "src": "https://m.media-amazon.com/images/I/71FtjejRbvL._AC_SL1500_.jpg",
-          "alt": "Angled front view with bag zipped and handles upright."
+          "src": "https://img.abercrombie.com/is/image/anf/KIC_324-3938-1220-104_prod1?policy=product-medium",
+          "alt": "alt content"
         },
         {
           "id": "281b985b-f1e4-4770-b07b-b2c86191af73",
-          "name": "Angled view",
-          "src": "https://m.media-amazon.com/images/I/61lfUr7ZOTL._AC_SL1280_.jpg",
-          "alt": "Angled front view with bag zipped and handles upright."
-        },
-        {
-          "id": "56a45cb6-3c0a-4582-9db8-aeea5c864693",
-          "name": "Angled view",
-          "src": "https://m.media-amazon.com/images/I/71XuM1JovwL._AC_SL1280_.jpg",
-          "alt": "Angled front view with bag zipped and handles upright.",
-          "size": "Large"
+          "name": "Light Brown Stripe",
+          "src": "https://img.hollisterco.com/is/image/anf/KIC_324-3938-1220-404_prod1?policy=product-large",
+          "alt": "alt content"
         }
       ],
       "colors": [
         {
-          "name": "Natural",
+          "name": "White Stripe",
           "bgColor": "bg-gray-700",
           "selectedColor": "ring-gray-700"
         },
         {
-          "name": "White",
+          "name": "Dark Teal Stripe",
           "bgColor": "bg-white",
           "selectedColor": "ring-gray-400"
         },
@@ -167,7 +161,7 @@
           "selectedColor": "ring-gray-500"
         }
       ],
-      "description": "\n    <p>The Zip Tote Basket is the perfect midpoint between shopping tote and comfy backpack. With convertible straps, you can hand carry, should sling, or backpack this convenient and spacious bag. The zip top and durable canvas construction keeps your goods protected for all-day use.</p>\n  ",
+      "description": "Comfortable and super soft, this t-shirt features a classic striped pattern and embroidered left chest logo icon. Short sleeves, crew neckline. Imported.",
       "details": [
         {
           "name": "Features",
@@ -185,37 +179,142 @@
     },
     {
       "id": "2",
-      "category": "Basket",
+      "category": "men",
+      "subcategory": "polos",
       "size": "Large",
-      "name": "Zip Tote Basket 2",
-      "price": 140,
-      "rating": 4,
+      "name": "Logo Icon Polo",
+      "price": 24.95,
+      "rating": 5,
       "images": [
         {
-          "id": "c5dc52b0-752d-4ce3-a798-3ce3bc59873d",
-          "name": "Angled view",
-          "src": "https://tailwindui.com/img/ecommerce-images/product-page-03-product-01.jpg",
-          "alt": "Angled front view with bag zipped and handles upright."
+          "id": "db7527b2-c870-425c-9b65-c20cc2d88541",
+          "name": "Green Polo",
+          "src": "https://img.abercrombie.com/is/image/anf/KIC_324-3933-1005-332_prod1?policy=product-medium",
+          "alt": "alt content"
+        },
+        {
+          "id": "281b985b-f1e4-4770-b07b-b2c86191af73",
+          "name": "Rose Polo",
+          "src": "https://img.abercrombie.com/is/image/anf/KIC_324-3933-1005-600_prod1?policy=product-medium",
+          "alt": "alt content"
         }
       ],
       "colors": [
         {
-          "name": "Washed Black",
+          "name": "White Stripe",
           "bgColor": "bg-gray-700",
           "selectedColor": "ring-gray-700"
         },
         {
-          "name": "White",
+          "name": "Dark Teal Stripe",
           "bgColor": "bg-white",
           "selectedColor": "ring-gray-400"
         },
         {
           "name": "Washed Gray",
-          "bgColor": "bg-gray-500",
+          "bgColor": "bg-gray-600",
           "selectedColor": "ring-gray-500"
         }
       ],
-      "description": "The Zip Tote Basket is the perfect midpoint between shopping tote and comfy backpack. With convertible straps, you can hand carry, should sling, or backpack this convenient and spacious bag. The zip top and durable canvas construction keeps your goods protected for all-day use.",
+      "description": "Comfortable and super soft, this t-shirt features a classic striped pattern and embroidered left chest logo icon. Short sleeves, crew neckline. Imported.",
+      "details": [
+        {
+          "name": "Features",
+          "items": [
+            "Multiple strap configurations",
+            "Spacious interior with top zip",
+            "Leather handle and tabs",
+            "Interior dividers",
+            "Stainless strap loops",
+            "Double stitched construction",
+            "Water-resistant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "women",
+      "subcategory": "sweaters",
+      "size": "Large",
+      "name": "Crop Floral Pattern Cardigan",
+      "price": 44.95,
+      "rating": 5,
+      "images": [
+        {
+          "id": "db7527b2-c870-425c-9b65-c20cc2d88541",
+          "name": "Green Polo",
+          "src": "https://img.abercrombie.com/is/image/anf/KIC_350-3070-1368-608_model2?policy=product-medium",
+          "alt": "alt content"
+        }
+      ],
+      "colors": [
+        {
+          "name": "White Stripe",
+          "bgColor": "bg-gray-700",
+          "selectedColor": "ring-gray-700"
+        },
+        {
+          "name": "Dark Teal Stripe",
+          "bgColor": "bg-white",
+          "selectedColor": "ring-gray-400"
+        },
+        {
+          "name": "Washed Gray",
+          "bgColor": "bg-gray-600",
+          "selectedColor": "ring-gray-500"
+        }
+      ],
+      "description": "Comfortable and super soft, this t-shirt features a classic striped pattern and embroidered left chest logo icon. Short sleeves, crew neckline. Imported.",
+      "details": [
+        {
+          "name": "Features",
+          "items": [
+            "Multiple strap configurations",
+            "Spacious interior with top zip",
+            "Leather handle and tabs",
+            "Interior dividers",
+            "Stainless strap loops",
+            "Double stitched construction",
+            "Water-resistant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "women",
+      "subcategory": "bottoms",
+      "size": "Large",
+      "name": "Ultra High-Rise Cargo Dad Pants",
+      "price": 59.95,
+      "rating": 5,
+      "images": [
+        {
+          "id": "db7527b2-c870-425c-9b65-c20cc2d88541",
+          "name": "Green Polo",
+          "src": "https://img.abercrombie.com/is/image/anf/KIC_356-3003-0320-301_model2?policy=product-medium",
+          "alt": "alt content"
+        }
+      ],
+      "colors": [
+        {
+          "name": "White Stripe",
+          "bgColor": "bg-gray-700",
+          "selectedColor": "ring-gray-700"
+        },
+        {
+          "name": "Dark Teal Stripe",
+          "bgColor": "bg-white",
+          "selectedColor": "ring-gray-400"
+        },
+        {
+          "name": "Washed Gray",
+          "bgColor": "bg-gray-600",
+          "selectedColor": "ring-gray-500"
+        }
+      ],
+      "description": "Comfortable and super soft, this t-shirt features a classic striped pattern and embroidered left chest logo icon. Short sleeves, crew neckline. Imported.",
       "details": [
         {
           "name": "Features",
@@ -235,17 +334,17 @@
   "discount": [
     {
       "id": "1",
-      "code": "SUMMER2020",
+      "code": "SUMMER20",
       "amount": 10
     },
     {
       "id": "2",
-      "code": "SUMMER2021",
+      "code": "SUMMER21",
       "amount": 20
     },
     {
       "id": "3",
-      "code": "SUMMER2022",
+      "code": "SUMMER22",
       "amount": 30
     }
   ]
