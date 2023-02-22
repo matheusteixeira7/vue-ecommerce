@@ -1,11 +1,11 @@
 interface Props {
-    name: string;
-    href: string;
+  name: string;
+  href: string;
 }
 
 export interface NavigationBarInterface {
-    shop: Props[];
-    company: Props[];
-    account: Props[];
-    connect: Props[];
+  shop: Props[];
+  company: Props[];
+  account: Props[];
+  connect: Props[];
 }
