@@ -10,7 +10,7 @@
       aria-labelledby="order-heading"
       class="bg-gray-50 px-4 py-6 sm:px-6 lg:hidden"
     >
-      <Disclosure as="div" class="mx-auto max-w-lg" v-slot="{ open }">
+      <Disclosure v-slot="{ open }" as="div" class="mx-auto max-w-lg">
         <div class="flex items-center justify-between">
           <h2 id="order-heading" class="text-lg font-medium text-gray-900">
             Your Order
@@ -25,8 +25,8 @@
 
         <DisclosurePanel>
           <ul
-            role="list"
             class="divide-y divide-gray-200 border-b border-gray-200"
+            role="list"
           >
             <li
               v-for="product in products"
@@ -34,8 +34,8 @@
               class="flex space-x-6 py-6"
             >
               <img
-                :src="product.imageSrc"
                 :alt="product.imageAlt"
+                :src="product.imageSrc"
                 class="h-40 w-40 flex-none rounded-md bg-gray-200 object-cover object-center"
               />
               <div class="flex flex-col justify-between space-y-4">
@@ -55,15 +55,15 @@
                 </div>
                 <div class="flex space-x-4">
                   <button
-                    type="button"
                     class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                    type="button"
                   >
                     Edit
                   </button>
                   <div class="flex border-l border-gray-300 pl-4">
                     <button
-                      type="button"
                       class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                      type="button"
                     >
                       Remove
                     </button>
@@ -73,23 +73,23 @@
             </li>
           </ul>
 
-          <form @submit.prevent="applyCoupon" class="mt-10">
+          <form class="mt-10" @submit.prevent="applyCoupon">
             <label
-              for="discount-code-mobile"
               class="block text-sm font-medium text-gray-700"
+              for="discount-code-mobile"
               >Discount code</label
             >
             <div class="mt-1 flex space-x-4">
               <input
-                type="text"
                 id="discount-code-mobile"
-                name="discount-code-mobile"
                 v-model="couponInput"
                 class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                name="discount-code-mobile"
+                type="text"
               />
               <button
-                type="submit"
                 class="rounded-md bg-gray-200 px-4 text-sm font-medium text-gray-600 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                type="submit"
               >
                 Apply
               </button>
@@ -172,8 +172,8 @@
       <h2 id="summary-heading" class="sr-only">Order summary</h2>
 
       <ul
-        role="list"
         class="flex-auto divide-y divide-gray-200 overflow-y-auto px-6"
+        role="list"
       >
         <li
           v-for="product in products"
@@ -181,8 +181,8 @@
           class="flex space-x-6 py-6"
         >
           <img
-            :src="product.imageSrc"
             :alt="product.imageAlt"
+            :src="product.imageSrc"
             class="h-40 w-40 flex-none rounded-md bg-gray-200 object-cover object-center"
           />
           <div class="flex flex-col justify-between space-y-4">
@@ -202,17 +202,17 @@
             </div>
             <div class="flex space-x-4">
               <button
+                class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
                 type="button"
                 @click="handleEditProduct()"
-                class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
               >
                 Edit
               </button>
               <div class="flex border-l border-gray-300 pl-4">
                 <button
+                  class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
                   type="button"
                   @click="handleRemoveProduct(product)"
-                  class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
                 >
                   Remove
                 </button>
@@ -227,21 +227,21 @@
       >
         <form @submit.prevent="applyCoupon">
           <label
-            for="discount-code"
             class="block text-sm font-medium text-gray-700"
+            for="discount-code"
             >Discount code</label
           >
           <div class="mt-1 flex space-x-4">
             <input
-              type="text"
               id="discount-code"
-              name="discount-code"
               v-model="couponInput"
               class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              name="discount-code"
+              type="text"
             />
             <button
-              type="submit"
               class="rounded-md bg-gray-200 px-4 text-sm font-medium text-gray-600 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+              type="submit"
             >
               Apply
             </button>
@@ -325,8 +325,8 @@
     >
       <div class="mx-auto max-w-lg pt-10">
         <button
-          type="button"
           class="flex w-full items-center justify-center rounded-md border border-transparent bg-black py-2 text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
+          type="button"
         >
           <span class="sr-only">Pay with Apple Pay</span>
           <svg class="h-5 w-auto" fill="currentColor" viewBox="0 0 50 20">
@@ -337,7 +337,7 @@
         </button>
 
         <div class="relative mt-8">
-          <div class="absolute inset-0 flex items-center" aria-hidden="true">
+          <div aria-hidden="true" class="absolute inset-0 flex items-center">
             <div class="w-full border-t border-gray-200" />
           </div>
           <div class="relative flex justify-center">
@@ -351,149 +351,149 @@
           <div class="grid grid-cols-12 gap-y-6 gap-x-4">
             <div class="col-span-full">
               <label
-                for="email-address"
                 class="block text-sm font-medium text-gray-700"
+                for="email-address"
                 >Email address</label
               >
               <div class="mt-1">
                 <input
-                  type="email"
                   id="email-address"
-                  name="email-address"
                   autocomplete="email"
                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  name="email-address"
+                  type="email"
                 />
               </div>
             </div>
 
             <div class="col-span-full">
               <label
-                for="name-on-card"
                 class="block text-sm font-medium text-gray-700"
+                for="name-on-card"
                 >Name on card</label
               >
               <div class="mt-1">
                 <input
-                  type="text"
                   id="name-on-card"
-                  name="name-on-card"
                   autocomplete="cc-name"
                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  name="name-on-card"
+                  type="text"
                 />
               </div>
             </div>
 
             <div class="col-span-full">
               <label
-                for="card-number"
                 class="block text-sm font-medium text-gray-700"
+                for="card-number"
                 >Card number</label
               >
               <div class="mt-1">
                 <input
-                  type="text"
                   id="card-number"
-                  name="card-number"
                   autocomplete="cc-number"
                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  name="card-number"
+                  type="text"
                 />
               </div>
             </div>
 
             <div class="col-span-8 sm:col-span-9">
               <label
-                for="expiration-date"
                 class="block text-sm font-medium text-gray-700"
+                for="expiration-date"
                 >Expiration date (MM/YY)</label
               >
               <div class="mt-1">
                 <input
-                  type="text"
-                  name="expiration-date"
                   id="expiration-date"
                   autocomplete="cc-exp"
                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  name="expiration-date"
+                  type="text"
                 />
               </div>
             </div>
 
             <div class="col-span-4 sm:col-span-3">
-              <label for="cvc" class="block text-sm font-medium text-gray-700"
+              <label class="block text-sm font-medium text-gray-700" for="cvc"
                 >CVC</label
               >
               <div class="mt-1">
                 <input
-                  type="text"
-                  name="cvc"
                   id="cvc"
                   autocomplete="csc"
                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  name="cvc"
+                  type="text"
                 />
               </div>
             </div>
 
             <div class="col-span-full">
               <label
-                for="address"
                 class="block text-sm font-medium text-gray-700"
+                for="address"
                 >Address</label
               >
               <div class="mt-1">
                 <input
-                  type="text"
                   id="address"
-                  name="address"
                   autocomplete="street-address"
                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  name="address"
+                  type="text"
                 />
               </div>
             </div>
 
             <div class="col-span-full sm:col-span-4">
-              <label for="city" class="block text-sm font-medium text-gray-700"
+              <label class="block text-sm font-medium text-gray-700" for="city"
                 >City</label
               >
               <div class="mt-1">
                 <input
-                  type="text"
                   id="city"
-                  name="city"
                   autocomplete="address-level2"
                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  name="city"
+                  type="text"
                 />
               </div>
             </div>
 
             <div class="col-span-full sm:col-span-4">
               <label
-                for="region"
                 class="block text-sm font-medium text-gray-700"
+                for="region"
                 >State / Province</label
               >
               <div class="mt-1">
                 <input
-                  type="text"
                   id="region"
-                  name="region"
                   autocomplete="address-level1"
                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  name="region"
+                  type="text"
                 />
               </div>
             </div>
 
             <div class="col-span-full sm:col-span-4">
               <label
-                for="postal-code"
                 class="block text-sm font-medium text-gray-700"
+                for="postal-code"
                 >Postal code</label
               >
               <div class="mt-1">
                 <input
-                  type="text"
                   id="postal-code"
-                  name="postal-code"
                   autocomplete="postal-code"
                   class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  name="postal-code"
+                  type="text"
                 />
               </div>
             </div>
@@ -503,22 +503,22 @@
             <div class="flex h-5 items-center">
               <input
                 id="same-as-shipping"
-                name="same-as-shipping"
-                type="checkbox"
                 checked="true"
                 class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                name="same-as-shipping"
+                type="checkbox"
               />
             </div>
             <label
-              for="same-as-shipping"
               class="text-sm font-medium text-gray-900"
+              for="same-as-shipping"
               >Billing address is the same as shipping address</label
             >
           </div>
 
           <button
-            type="submit"
             class="mt-6 w-full rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            type="submit"
           >
             Pay
             {{
@@ -531,8 +531,8 @@
 
           <p class="mt-6 flex justify-center text-sm font-medium text-gray-500">
             <LockClosedIcon
-              class="mr-1.5 h-5 w-5 text-gray-400"
               aria-hidden="true"
+              class="mr-1.5 h-5 w-5 text-gray-400"
             />
             Payment details stored in plain text
           </p>
@@ -543,6 +543,7 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from "vue";
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import { LockClosedIcon } from "@heroicons/vue/20/solid";
 
@@ -552,7 +553,7 @@ import type { CartInterface, CouponsInterface } from "@/interfaces";
 
 import NavigationBar from "@/components/NavigationBar.vue";
 
-export default {
+export default defineComponent({
   name: "CheckoutView",
   components: {
     Disclosure,
@@ -625,5 +626,5 @@ export default {
       }
     },
   },
-};
+});
 </script>

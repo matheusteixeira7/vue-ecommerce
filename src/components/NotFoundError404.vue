@@ -12,7 +12,7 @@
       Sorry, we couldn’t find the page you’re looking for.
     </p>
     <div class="mt-10">
-      <a href="/" class="text-sm font-semibold leading-7 text-indigo-600"
+      <a class="text-sm font-semibold leading-7 text-indigo-600" href="/"
         ><span aria-hidden="true">&larr;</span> Back to home</a
       >
     </div>

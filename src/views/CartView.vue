@@ -17,8 +17,8 @@
           <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
 
           <ul
-            role="list"
             class="divide-y divide-gray-200 border-t border-b border-gray-200"
+            role="list"
           >
             <li
               v-for="(product, productIdx) in products"
@@ -27,8 +27,8 @@
             >
               <div class="flex-shrink-0">
                 <img
-                  :src="product.imageSrc"
                   :alt="product.imageAlt"
+                  :src="product.imageSrc"
                   class="h-24 w-24 rounded-md object-cover object-center sm:h-48 sm:w-48"
                 />
               </div>
@@ -69,15 +69,15 @@
                     >
                     <select
                       :id="`quantity-${productIdx}`"
-                      :name="`quantity-${productIdx}`"
                       v-model="product.quantity"
-                      @change="handleChangeProductQuantity(product)"
+                      :name="`quantity-${productIdx}`"
                       class="max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+                      @change="handleChangeProductQuantity(product)"
                     >
                       <option
                         v-for="(item, index) in qtdOptions"
-                        :value="item"
                         :key="index"
+                        :value="item"
                       >
                         {{ item }}
                       </option>
@@ -85,12 +85,12 @@
 
                     <div class="absolute top-0 right-0">
                       <button
-                        type="button"
                         class="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500"
+                        type="button"
                         @click="handleRemoveProduct(product)"
                       >
                         <span class="sr-only">Remove</span>
-                        <XMarkIconMini class="h-5 w-5" aria-hidden="true" />
+                        <XMarkIconMini aria-hidden="true" class="h-5 w-5" />
                       </button>
                     </div>
                   </div>
@@ -99,13 +99,13 @@
                 <p class="mt-4 flex space-x-2 text-sm text-gray-700">
                   <CheckIcon
                     v-if="product.inStock"
-                    class="h-5 w-5 flex-shrink-0 text-green-500"
                     aria-hidden="true"
+                    class="h-5 w-5 flex-shrink-0 text-green-500"
                   />
                   <ClockIcon
                     v-else
-                    class="h-5 w-5 flex-shrink-0 text-gray-300"
                     aria-hidden="true"
+                    class="h-5 w-5 flex-shrink-0 text-gray-300"
                   />
                   <span>{{
                     product.inStock
@@ -140,13 +140,13 @@
               <dt class="flex items-center text-sm text-gray-600">
                 <span>Shipping estimate</span>
                 <a
-                  href="#"
                   class="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-500"
+                  href="#"
                 >
                   <span class="sr-only"
                     >Learn more about how shipping is calculated</span
                   >
-                  <QuestionMarkCircleIcon class="h-5 w-5" aria-hidden="true" />
+                  <QuestionMarkCircleIcon aria-hidden="true" class="h-5 w-5" />
                 </a>
               </dt>
               <dd class="text-sm font-medium text-gray-900">
@@ -164,13 +164,13 @@
               <dt class="flex text-sm text-gray-600">
                 <span>Tax estimate</span>
                 <a
-                  href="#"
                   class="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-500"
+                  href="#"
                 >
                   <span class="sr-only"
                     >Learn more about how tax is calculated</span
                   >
-                  <QuestionMarkCircleIcon class="h-5 w-5" aria-hidden="true" />
+                  <QuestionMarkCircleIcon aria-hidden="true" class="h-5 w-5" />
                 </a>
               </dt>
               <dd class="text-sm font-medium text-gray-900">
@@ -199,8 +199,8 @@
 
           <div class="mt-6">
             <button
-              type="submit"
               class="w-full rounded-md border border-transparent bg-indigo-600 py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+              type="submit"
             >
               Checkout
             </button>
@@ -226,8 +226,8 @@
               class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md group-hover:opacity-75 lg:aspect-none lg:h-80"
             >
               <img
-                :src="relatedProduct.images[0].src"
                 :alt="relatedProduct.images[0].alt"
+                :src="relatedProduct.images[0].src"
                 class="h-full w-full object-cover object-center lg:h-full lg:w-full"
               />
             </div>
@@ -260,6 +260,7 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from "vue";
 import {
   CheckIcon,
   ClockIcon,
@@ -270,7 +271,7 @@ import NavigationBar from "@/components/NavigationBar.vue";
 import axios from "@/services/axios";
 import type { CartInterface, ProductInterface } from "@/interfaces";
 
-export default {
+export default defineComponent({
   name: "CartView",
   components: {
     CheckIcon,
@@ -295,27 +296,33 @@ export default {
       const relatedProductsData = await axios.get("/products");
       this.relatedProducts = relatedProductsData.data;
     },
+
     async handleChangeProductQuantity(product: CartInterface) {
       await axios.put(`/cart/${product.id}`, product);
-      this.fetchData();
+      await this.fetchData();
     },
+
     async handleRemoveProduct(product: CartInterface) {
       await axios.delete(`/cart/${product.id}`);
-      this.fetchData();
+      await this.fetchData();
     },
+
     handleSubmit(event: Event) {
       event.preventDefault();
       this.$router.push("/checkout");
     },
+
     calculateSubtotal() {
       return this.products.reduce(
         (total, product) => total + product.price * product.quantity,
         0
       );
     },
+
     calculateShippingCost() {
       return this.calculateSubtotal() > 100 ? 0 : 25;
     },
+
     calculateTotal() {
       return (
         this.calculateSubtotal() +
@@ -323,12 +330,14 @@ export default {
         this.calculateTax()
       );
     },
+
     calculateTax() {
       return this.calculateSubtotal() * 0.08;
     },
   },
+
   async mounted() {
     await this.fetchData();
   },
-};
+});
 </script>

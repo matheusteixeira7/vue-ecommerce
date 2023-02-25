@@ -4,48 +4,9 @@
 
     <div>
       <!-- Mobile filter dialog -->
-      <div class="border-b border-gray-200">
-        <nav
-          aria-label="Breadcrumb"
-          class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
-        >
-          <ol role="list" class="flex items-center space-x-4 py-4">
-            <li v-for="breadcrumb in breadcrumbs" :key="breadcrumb.id">
-              <div class="flex items-center">
-                <a
-                  :href="breadcrumb.href"
-                  class="mr-4 text-sm font-medium text-gray-900"
-                  >{{ capitalizeWords(breadcrumb.name as string) }}</a
-                >
-                <svg
-                  viewBox="0 0 6 20"
-                  aria-hidden="true"
-                  class="h-5 w-auto text-gray-300"
-                >
-                  <path
-                    d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-            </li>
-            <li class="text-sm">
-              <a
-                href="#"
-                aria-current="page"
-                class="font-medium text-gray-500 hover:text-gray-600"
-              >
-                {{ capitalizeWords($route.query.subcategory as string[]) }}
-              </a>
-            </li>
-          </ol>
-        </nav>
-      </div>
-
       <IsLoading v-if="isLoading" />
-      <NotFoundError404 v-else-if="NotFound" />
       <main v-else class="mx-auto max-w-2xl px-4 lg:max-w-7xl lg:px-8">
-        <div class="border-b border-gray-200 pt-24 pb-10">
+        <div class="border-b border-gray-200 pt-10 pb-10">
           <h1 class="text-4xl font-bold tracking-tight text-gray-900">
             {{ title }}
           </h1>
@@ -62,14 +23,14 @@
             <h2 class="sr-only">Filters</h2>
 
             <button
-              type="button"
               class="inline-flex items-center lg:hidden"
+              type="button"
               @click="mobileFiltersOpen = true"
             >
               <span class="text-sm font-medium text-gray-700">Filters</span>
               <PlusIcon
-                class="ml-1 h-5 w-5 flex-shrink-0 text-gray-400"
                 aria-hidden="true"
+                class="ml-1 h-5 w-5 flex-shrink-0 text-gray-400"
               />
             </button>
 
@@ -92,10 +53,11 @@
                       >
                         <input
                           :id="`${section.id}-${optionIdx}`"
+                          v-model="option.isSelected"
                           :name="`${section.id}[]`"
                           :value="option.value"
-                          type="checkbox"
                           class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          type="checkbox"
                         />
                         <label
                           :for="`${section.id}-${optionIdx}`"
@@ -128,8 +90,8 @@
                   class="aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96"
                 >
                   <img
-                    :src="product.images[0].src"
                     :alt="product.images[0].alt"
+                    :src="product.images[0].src"
                     class="h-full w-full object-cover object-center sm:h-full sm:w-full"
                   />
                 </div>
@@ -145,7 +107,7 @@
                   </p>
                   <div class="flex flex-1 flex-col justify-end">
                     <p class="text-sm italic text-gray-500">
-                      {{ product.size }}
+                      {{ capitalizeWords(product.size!) }}
                     </p>
                     <p class="text-base font-medium text-gray-900">
                       {{
@@ -169,104 +131,110 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from "vue";
 import { PlusIcon } from "@heroicons/vue/20/solid";
-
-import axios from "@/services/axios";
 
 import FooterNavigation from "@/components/FooterNavigation.vue";
 import NavigationBar from "@/components/NavigationBar.vue";
-import NotFoundError404 from "@/components/NotFoundError404.vue";
 import IsLoading from "@/components/IsLoading.vue";
 
 import type { ProductInterface } from "@/interfaces";
+import axios from "@/services/axios";
 
-export default {
-  name: "CategoryView",
+interface FiltersInterface {
+  id: string;
+  name: string;
+  category: string;
+  options: {
+    value: string;
+    label: string;
+    isSelected: boolean;
+  }[];
+}
+
+export default defineComponent({
   components: {
     PlusIcon,
     NavigationBar,
     FooterNavigation,
-    NotFoundError404,
     IsLoading,
   },
+
   data() {
     return {
-      breadcrumbs: [{ id: 1, name: this.$route.query.category, href: "#" }],
-      filters: [
-        {
-          id: "color",
-          name: "Color",
-          options: [
-            { value: "white", label: "White" },
-            { value: "beige", label: "Beige" },
-            { value: "blue", label: "Blue" },
-            { value: "brown", label: "Brown" },
-            { value: "green", label: "Green" },
-            { value: "purple", label: "Purple" },
-          ],
-        },
-        {
-          id: "category",
-          name: "Category",
-          options: [
-            { value: "new-arrivals", label: "All New Arrivals" },
-            { value: "tees", label: "Tees" },
-            { value: "crewnecks", label: "Crewnecks" },
-            { value: "sweatears", label: "Sweaters" },
-            { value: "pants-shorts", label: "Pants & Shorts" },
-          ],
-        },
-        {
-          id: "sizes",
-          name: "Sizes",
-          options: [
-            { value: "xs", label: "XS" },
-            { value: "s", label: "S" },
-            { value: "m", label: "M" },
-            { value: "l", label: "L" },
-            { value: "xl", label: "XL" },
-            { value: "2xl", label: "2XL" },
-          ],
-        },
-      ],
+      breadcrumbs: [{ id: 1, name: this.$route.params.category, href: "#" }],
+      filters: [] as FiltersInterface[],
+      isChecked: false,
       products: {} as ProductInterface[],
       mobileFiltersOpen: false,
       isLoading: true,
-      NotFound: false,
-      title: this.capitalizeWords(this.$route.query.category),
+      title: this.capitalizeWords(this.$route.params.category),
     };
-  },
-  async mounted() {
-    this.getQueryParams();
-    await this.fetchData();
   },
   methods: {
     async fetchData() {
       try {
         this.isLoading = true;
-        const url = `/products?${this.getQueryParams()}`;
-        const response = await axios.get<ProductInterface[]>(url);
-        this.products = response.data;
+        const filtersResponse = await axios.get<FiltersInterface[]>(
+          `/filters?category=${this.$route.params.category}`
+        );
+        this.filters = filtersResponse.data;
 
-        if (this.products.length === 0) {
-          this.NotFound = true;
-        }
+        const response = await axios.get<ProductInterface[]>(
+          `/products?category=${this.getSelectedOptions(this.filters)}`
+        );
+        this.products = response.data;
       } catch (error) {
         console.error(error);
       } finally {
         this.isLoading = false;
       }
     },
-    getQueryParams() {
-      const searchParams = new URLSearchParams(window.location.search);
-      const queryParams = [];
 
-      for (const [key, value] of searchParams) {
-        queryParams.push(`${key}=${value}`);
+    async fetchProducts() {
+      try {
+        this.isLoading = true;
+        const response = await axios.get<ProductInterface[]>(
+          `/products?category=${this.getSelectedOptions(this.filters)}`
+        );
+        this.products = response.data;
+      } catch (error) {
+        console.error(error);
+      } finally {
+        this.isLoading = false;
+      }
+    },
+
+    getSelectedOptions(filters: FiltersInterface[]) {
+      const selectedOptions = [] as {
+        key: string;
+        value: string;
+      }[];
+      filters.forEach((filter) => {
+        filter.options.forEach((option) => {
+          if (option.isSelected) {
+            selectedOptions.push({
+              key: filter.name,
+              value: option.value,
+            });
+          }
+        });
+      });
+
+      const queryParams = [];
+      for (const item of selectedOptions) {
+        queryParams.push(
+          `${item.key.toLocaleLowerCase()}=${item.value.toLocaleLowerCase()}`
+        );
       }
 
-      return queryParams.join("&");
+      const query = queryParams.join("&");
+
+      return query.length > 0
+        ? `${this.$route.params.category}&${query}`
+        : `${this.$route.params.category}`;
     },
+
     capitalizeWords(input: string | string[]) {
       if (typeof input === "string") {
         // Converte a string em um array de palavras
@@ -280,5 +248,19 @@ export default {
       return capitalized.length > 1 ? capitalized.join(" & ") : capitalized[0];
     },
   },
-};
+  async mounted() {
+    await this.fetchData();
+    await this.fetchProducts();
+  },
+
+  watch: {
+    filters: {
+      deep: true,
+      handler() {
+        this.getSelectedOptions(this.filters);
+        this.fetchProducts();
+      },
+    },
+  },
+});
 </script>

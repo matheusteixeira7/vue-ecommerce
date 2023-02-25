@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Mobile menu -->
-    <TransitionRoot as="template" :show="mobileMenuOpen">
+    <TransitionRoot :show="mobileMenuOpen" as="template">
       <DialogHeadlessUI
         as="div"
         class="relative z-40 lg:hidden"
@@ -34,12 +34,12 @@
             >
               <div class="flex px-4 pt-5 pb-2">
                 <button
-                  type="button"
                   class="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400"
+                  type="button"
                   @click="mobileMenuOpen = false"
                 >
                   <span class="sr-only">Close menu</span>
-                  <XMarkIcon class="h-6 w-6" aria-hidden="true" />
+                  <XMarkIcon aria-hidden="true" class="h-6 w-6" />
                 </button>
               </div>
 
@@ -48,10 +48,10 @@
                 <div class="border-b border-gray-200">
                   <TabList class="-mb-px flex space-x-8 px-4">
                     <Tab
-                      as="template"
                       v-for="category in navigation.categories"
                       :key="category.name"
                       v-slot="{ selected }"
+                      as="template"
                     >
                       <button
                         :class="[
@@ -82,8 +82,8 @@
                           class="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75"
                         >
                           <img
-                            :src="item.imageSrc"
                             :alt="item.imageAlt"
+                            :src="item.imageSrc"
                             class="object-cover object-center"
                           />
                         </div>
@@ -92,8 +92,8 @@
                           class="mt-6 block font-medium text-gray-900"
                         >
                           <span
-                            class="absolute inset-0 z-10"
                             aria-hidden="true"
+                            class="absolute inset-0 z-10"
                           />
                           {{ item.name }}
                         </a>
@@ -111,9 +111,9 @@
                         {{ section.name }}
                       </p>
                       <ul
-                        role="list"
                         :aria-labelledby="`${category.id}-${section.id}-heading-mobile`"
                         class="mt-6 flex flex-col space-y-6"
+                        role="list"
                       >
                         <li
                           v-for="item in section.items"
@@ -148,23 +148,23 @@
 
               <div class="space-y-6 border-t border-gray-200 py-6 px-4">
                 <div class="flow-root">
-                  <a href="#" class="-m-2 block p-2 font-medium text-gray-900"
+                  <a class="-m-2 block p-2 font-medium text-gray-900" href="#"
                     >Sign in</a
                   >
                 </div>
                 <div class="flow-root">
-                  <a href="#" class="-m-2 block p-2 font-medium text-gray-900"
+                  <a class="-m-2 block p-2 font-medium text-gray-900" href="#"
                     >Create account</a
                   >
                 </div>
               </div>
 
               <div class="border-t border-gray-200 py-6 px-4">
-                <a href="/" class="-m-2 flex items-center p-2">
+                <a class="-m-2 flex items-center p-2" href="/">
                   <img
-                    src="https://tailwindui.com/img/flags/flag-canada.svg"
                     alt=""
                     class="block h-auto w-5 flex-shrink-0"
+                    src="https://tailwindui.com/img/flags/flag-canada.svg"
                   />
                   <span class="ml-3 block text-base font-medium text-gray-900"
                     >CAD</span
@@ -189,12 +189,12 @@
         <div class="border-b border-gray-200">
           <div class="flex h-16 items-center">
             <button
-              type="button"
               class="rounded-md bg-white p-2 text-gray-400 lg:hidden"
+              type="button"
               @click="mobileMenuOpen = true"
             >
               <span class="sr-only">Open menu</span>
-              <Bars3Icon class="h-6 w-6" aria-hidden="true" />
+              <Bars3Icon aria-hidden="true" class="h-6 w-6" />
             </button>
 
             <!-- Logo -->
@@ -202,9 +202,9 @@
               <a href="/">
                 <span class="sr-only">Your Company</span>
                 <img
+                  alt=""
                   class="h-8 w-auto"
                   src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt=""
                 />
               </a>
             </div>
@@ -215,8 +215,8 @@
                 <Popover
                   v-for="category in navigation.categories"
                   :key="category.name"
-                  class="flex"
                   v-slot="{ open }"
+                  class="flex"
                 >
                   <div class="relative flex">
                     <PopoverButton
@@ -227,8 +227,8 @@
                         'relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out',
                       ]"
                     >
-                      {{ category.name }}</PopoverButton
-                    >
+                      {{ category.name }}
+                    </PopoverButton>
                   </div>
 
                   <transition
@@ -244,8 +244,8 @@
                     >
                       <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
                       <div
-                        class="absolute inset-0 top-1/2 bg-white shadow"
                         aria-hidden="true"
+                        class="absolute inset-0 top-1/2 bg-white shadow"
                       />
 
                       <div class="relative bg-white">
@@ -261,8 +261,8 @@
                                   class="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75"
                                 >
                                   <img
-                                    :src="item.imageSrc"
                                     :alt="item.imageAlt"
+                                    :src="item.imageSrc"
                                     class="object-cover object-center"
                                   />
                                 </div>
@@ -271,8 +271,8 @@
                                   class="mt-6 block font-medium text-gray-900"
                                 >
                                   <span
-                                    class="absolute inset-0 z-10"
                                     aria-hidden="true"
+                                    class="absolute inset-0 z-10"
                                   />
                                   {{ item.name }}
                                 </a>
@@ -293,9 +293,9 @@
                                   {{ section.name }}
                                 </p>
                                 <ul
-                                  role="list"
                                   :aria-labelledby="`${section.name}-heading`"
                                   class="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
+                                  role="list"
                                 >
                                   <li
                                     v-for="item in section.items"
@@ -333,27 +333,27 @@
                 class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6"
               >
                 <a
-                  href="#"
                   class="text-sm font-medium text-gray-700 hover:text-gray-800"
+                  href="#"
                   >Sign in</a
                 >
-                <span class="h-6 w-px bg-gray-200" aria-hidden="true" />
+                <span aria-hidden="true" class="h-6 w-px bg-gray-200" />
                 <a
-                  href="#"
                   class="text-sm font-medium text-gray-700 hover:text-gray-800"
+                  href="#"
                   >Create account</a
                 >
               </div>
 
               <div class="hidden lg:ml-8 lg:flex">
                 <a
-                  href="#"
                   class="flex items-center text-gray-700 hover:text-gray-800"
+                  href="#"
                 >
                   <img
-                    src="https://tailwindui.com/img/flags/flag-canada.svg"
                     alt=""
                     class="block h-auto w-5 flex-shrink-0"
+                    src="https://tailwindui.com/img/flags/flag-canada.svg"
                   />
                   <span class="ml-3 block text-sm font-medium">CAD</span>
                   <span class="sr-only">, change currency</span>
@@ -362,18 +362,18 @@
 
               <!-- Search -->
               <div class="flex lg:ml-6">
-                <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
+                <a class="p-2 text-gray-400 hover:text-gray-500" href="#">
                   <span class="sr-only">Search</span>
-                  <MagnifyingGlassIcon class="h-6 w-6" aria-hidden="true" />
+                  <MagnifyingGlassIcon aria-hidden="true" class="h-6 w-6" />
                 </a>
               </div>
 
               <!-- Cart -->
               <div class="ml-4 flow-root lg:ml-6">
-                <a href="/cart" class="group -m-2 flex items-center p-2">
+                <a class="group -m-2 flex items-center p-2" href="/cart">
                   <ShoppingBagIcon
-                    class="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                     aria-hidden="true"
+                    class="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                   />
                   <span
                     class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800"
@@ -389,7 +389,7 @@
     </header>
   </div>
 
-  <TransitionRoot as="template" :show="mobileFiltersOpen">
+  <TransitionRoot :show="mobileFiltersOpen" as="template">
     <DialogHeadlessUI
       as="div"
       class="relative z-40 lg:hidden"
@@ -423,23 +423,23 @@
             <div class="flex items-center justify-between px-4">
               <h2 class="text-lg font-medium text-gray-900">Filters</h2>
               <button
-                type="button"
                 class="-mr-2 flex h-10 w-10 items-center justify-center p-2 text-gray-400 hover:text-gray-500"
+                type="button"
                 @click="mobileFiltersOpen = false"
               >
                 <span class="sr-only">Close menu</span>
-                <XMarkIcon class="h-6 w-6" aria-hidden="true" />
+                <XMarkIcon aria-hidden="true" class="h-6 w-6" />
               </button>
             </div>
 
             <!-- Filters -->
             <form class="mt-4">
               <Disclosure
-                as="div"
                 v-for="section in filters"
                 :key="section.name"
-                class="border-t border-gray-200 pt-4 pb-4"
                 v-slot="{ open }"
+                as="div"
+                class="border-t border-gray-200 pt-4 pb-4"
               >
                 <fieldset>
                   <legend class="w-full px-2">
@@ -471,8 +471,8 @@
                           :id="`${section.id}-${optionIdx}-mobile`"
                           :name="`${section.id}[]`"
                           :value="option.value"
-                          type="checkbox"
                           class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          type="checkbox"
                         />
                         <label
                           :for="`${section.id}-${optionIdx}-mobile`"
@@ -515,10 +515,10 @@ import {
 } from "@headlessui/vue";
 import {
   Bars3Icon,
+  ChevronDownIcon,
   MagnifyingGlassIcon,
   ShoppingBagIcon,
   XMarkIcon,
-  ChevronDownIcon,
 } from "@heroicons/vue/24/outline";
 
 export default {

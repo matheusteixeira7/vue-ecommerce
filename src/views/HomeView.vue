@@ -5,9 +5,9 @@
       <!-- Decorative image and overlay -->
       <div aria-hidden="true" class="absolute inset-0 overflow-hidden">
         <img
-          src="https://tailwindui.com/img/ecommerce-images/home-page-01-hero-full-width.jpg"
           alt=""
           class="h-full w-full object-cover object-center"
+          src="https://tailwindui.com/img/ecommerce-images/home-page-01-hero-full-width.jpg"
         />
       </div>
       <div aria-hidden="true" class="absolute inset-0 bg-gray-900 opacity-50" />
@@ -27,8 +27,8 @@
           stock.
         </p>
         <a
-          href="#"
           class="mt-8 inline-block rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100"
+          href="#"
           >Shop New Arrivals</a
         >
       </div>
@@ -50,8 +50,8 @@
             Shop by Category
           </h2>
           <a
-            href="#"
             class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block"
+            href="#"
           >
             Browse all categories
             <span aria-hidden="true"> &rarr;</span>
@@ -95,8 +95,8 @@
 
         <div class="mt-6 px-4 sm:hidden">
           <a
-            href="#"
             class="block text-sm font-semibold text-indigo-600 hover:text-indigo-500"
+            href="#"
           >
             Browse all categories
             <span aria-hidden="true"> &rarr;</span>
@@ -112,9 +112,9 @@
         <div class="relative overflow-hidden rounded-lg">
           <div class="absolute inset-0">
             <img
-              src="https://tailwindui.com/img/ecommerce-images/home-page-01-feature-section-01.jpg"
               alt=""
               class="h-full w-full object-cover object-center"
+              src="https://tailwindui.com/img/ecommerce-images/home-page-01-feature-section-01.jpg"
             />
           </div>
           <div
@@ -137,8 +137,8 @@
                 least you have a really nice desk setup.
               </p>
               <a
-                href="#"
                 class="mt-8 block w-full rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto"
+                href="#"
                 >Shop Workspace</a
               >
             </div>
@@ -176,8 +176,8 @@
               class="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg group-hover:opacity-75 lg:aspect-w-5 lg:aspect-h-6"
             >
               <img
-                :src="collection.imageSrc"
                 :alt="collection.imageAlt"
+                :src="collection.imageSrc"
                 class="h-full w-full object-cover object-center"
               />
             </div>
@@ -199,9 +199,9 @@
         <div class="relative overflow-hidden rounded-lg">
           <div class="absolute inset-0">
             <img
-              src="https://tailwindui.com/img/ecommerce-images/home-page-01-feature-section-02.jpg"
               alt=""
               class="h-full w-full object-cover object-center"
+              src="https://tailwindui.com/img/ecommerce-images/home-page-01-feature-section-02.jpg"
             />
           </div>
           <div
@@ -223,8 +223,8 @@
                 Just the undeniable urge to fill empty circles.
               </p>
               <a
-                href="#"
                 class="mt-8 block w-full rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto"
+                href="#"
                 >Shop Focus</a
               >
             </div>
@@ -238,10 +238,11 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from "vue";
 import NavigationBar from "@/components/NavigationBar.vue";
 import FooterNavigation from "@/components/FooterNavigation.vue";
 
-export default {
+export default defineComponent({
   name: "HomeView",
   components: {
     NavigationBar,
@@ -315,5 +316,5 @@ export default {
       ],
     };
   },
-};
+});
 </script>

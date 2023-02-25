@@ -18,8 +18,8 @@
                 <Tab
                   v-for="image in product.images"
                   :key="image.id"
-                  class="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-4"
                   v-slot="{ selected }"
+                  class="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-4"
                 >
                   <span class="sr-only">
                     {{ image.name }}
@@ -44,8 +44,8 @@
             <TabPanels class="aspect-w-1 aspect-h-1 w-full">
               <TabPanel v-for="image in product.images" :key="image.id">
                 <img
-                  :src="image.src"
                   :alt="image.alt"
+                  :src="image.src"
                   class="h-full w-full object-cover object-center sm:rounded-lg"
                 />
               </TabPanel>
@@ -100,11 +100,11 @@
                   </RadioGroupLabel>
                   <span class="flex items-center space-x-3">
                     <RadioGroupOption
-                      as="template"
                       v-for="color in product.colors"
                       :key="color.name"
-                      :value="color"
                       v-slot="{ active, checked }"
+                      :value="color"
+                      as="template"
                     >
                       <div
                         :class="[
@@ -118,11 +118,11 @@
                           {{ color.name }}
                         </RadioGroupLabel>
                         <span
-                          aria-hidden="true"
                           :class="[
                             color.bgColor,
                             'h-8 w-8 border border-black border-opacity-10 rounded-full',
                           ]"
+                          aria-hidden="true"
                         />
                       </div>
                     </RadioGroupOption>
@@ -131,16 +131,16 @@
               </div>
               <div class="sm:flex-col1 mt-10 flex">
                 <button
-                  type="submit"
                   class="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+                  type="submit"
                 >
                   Add to bag
                 </button>
                 <button
-                  type="button"
                   class="ml-4 flex items-center justify-center rounded-md py-3 px-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500"
+                  type="button"
                 >
-                  <HeartIcon class="h-6 w-6 flex-shrink-0" aria-hidden="true" />
+                  <HeartIcon aria-hidden="true" class="h-6 w-6 flex-shrink-0" />
                   <span class="sr-only">Add to favorites</span>
                 </button>
               </div>
@@ -149,10 +149,10 @@
               <h2 id="details-heading" class="sr-only">Additional details</h2>
               <div class="divide-y divide-gray-200 border-t">
                 <Disclosure
-                  as="div"
                   v-for="detail in product.details"
                   :key="detail.name"
                   v-slot="{ open }"
+                  as="div"
                 >
                   <h3>
                     <DisclosureButton
@@ -168,13 +168,13 @@
                       <span class="ml-6 flex items-center">
                         <PlusIcon
                           v-if="!open"
-                          class="block h-6 w-6 text-gray-400 group-hover:text-gray-500"
                           aria-hidden="true"
+                          class="block h-6 w-6 text-gray-400 group-hover:text-gray-500"
                         />
                         <MinusIcon
                           v-else
-                          class="block h-6 w-6 text-indigo-400 group-hover:text-indigo-500"
                           aria-hidden="true"
+                          class="block h-6 w-6 text-indigo-400 group-hover:text-indigo-500"
                         />
                       </span>
                     </DisclosureButton>
@@ -199,6 +199,7 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from "vue";
 import {
   Disclosure,
   DisclosureButton,
@@ -223,7 +224,7 @@ import IsLoading from "@/components/IsLoading.vue";
 
 import type { ProductInterface } from "@/interfaces";
 
-export default {
+export default defineComponent({
   name: "ProductView",
   components: {
     Disclosure,
@@ -259,5 +260,5 @@ export default {
     this.selectedColor = this.product.colors[0];
     this.isLoading = false;
   },
-};
+});
 </script>

@@ -126,7 +126,7 @@
       "id": "1",
       "category": "men",
       "subcategory": "tees",
-      "size": "Large",
+      "size": "medium",
       "name": "Striped Logo Icon Crew T-Shirt",
       "price": 19.95,
       "rating": 4,
@@ -181,7 +181,7 @@
       "id": "2",
       "category": "men",
       "subcategory": "polos",
-      "size": "Large",
+      "size": "large",
       "name": "Logo Icon Polo",
       "price": 24.95,
       "rating": 5,
@@ -236,7 +236,7 @@
       "id": "3",
       "category": "women",
       "subcategory": "sweaters",
-      "size": "Large",
+      "size": "small",
       "name": "Crop Floral Pattern Cardigan",
       "price": 44.95,
       "rating": 5,
@@ -285,7 +285,7 @@
       "id": "4",
       "category": "women",
       "subcategory": "bottoms",
-      "size": "Large",
+      "size": "large",
       "name": "Ultra High-Rise Cargo Dad Pants",
       "price": 59.95,
       "rating": 5,
@@ -346,6 +346,200 @@
       "id": "3",
       "code": "SUMMER22",
       "amount": 30
+    }
+  ],
+  "filters": [
+    {
+      "id": "color",
+      "name": "Colors",
+      "category": "men",
+      "options": [
+        {
+          "value": "white",
+          "label": "White",
+          "isSelected": false
+        },
+        {
+          "value": "beige",
+          "label": "Beige",
+          "isSelected": false
+        },
+        {
+          "value": "blue",
+          "label": "Blue",
+          "isSelected": false
+        },
+        {
+          "value": "brown",
+          "label": "Brown",
+          "isSelected": false
+        },
+        {
+          "value": "green",
+          "label": "Green",
+          "isSelected": false
+        },
+        {
+          "value": "purple",
+          "label": "Purple",
+          "isSelected": false
+        }
+      ]
+    },
+    {
+      "id": "category",
+      "name": "Subcategory",
+      "category": "men",
+      "options": [
+        {
+          "value": "tees",
+          "label": "Tees",
+          "isSelected": false
+        },
+        {
+          "value": "bottoms",
+          "label": "Bottoms",
+          "isSelected": false
+        },
+        {
+          "value": "polos",
+          "label": "Polos",
+          "isSelected": false
+        },
+        {
+          "value": "pants-shorts",
+          "label": "Pants & Shorts",
+          "isSelected": false
+        }
+      ]
+    },
+    {
+      "id": "size",
+      "name": "Size",
+      "category": "men",
+      "options": [
+        {
+          "value": "extra small",
+          "label": "XS",
+          "isSelected": false
+        },
+        {
+          "value": "small",
+          "label": "S",
+          "isSelected": false
+        },
+        {
+          "value": "medium",
+          "label": "M",
+          "isSelected": false
+        },
+        {
+          "value": "large",
+          "label": "L",
+          "isSelected": false
+        },
+        {
+          "value": "extra large",
+          "label": "XL",
+          "isSelected": false
+        }
+      ]
+    },
+    {
+      "id": "color",
+      "name": "Colors",
+      "category": "women",
+      "options": [
+        {
+          "value": "white",
+          "label": "White",
+          "isSelected": false
+        },
+        {
+          "value": "beige",
+          "label": "Beige",
+          "isSelected": false
+        },
+        {
+          "value": "blue",
+          "label": "Blue",
+          "isSelected": false
+        },
+        {
+          "value": "brown",
+          "label": "Brown",
+          "isSelected": false
+        },
+        {
+          "value": "green",
+          "label": "Green",
+          "isSelected": false
+        },
+        {
+          "value": "purple",
+          "label": "Purple",
+          "isSelected": false
+        }
+      ]
+    },
+    {
+      "id": "subcategory",
+      "name": "Subcategory",
+      "category": "women",
+      "options": [
+        {
+          "value": "tees",
+          "label": "Tees",
+          "isSelected": false
+        },
+        {
+          "value": "bottoms",
+          "label": "Bottoms",
+          "isSelected": false
+        },
+        {
+          "value": "sweaters",
+          "label": "Sweaters",
+          "isSelected": false
+        },
+        {
+          "value": "pants-shorts",
+          "label": "Pants & Shorts",
+          "isSelected": false
+        }
+      ]
+    },
+    {
+      "id": "size",
+      "name": "Size",
+      "category": "women",
+      "options": [
+        {
+          "value": "extra small",
+          "label": "XS",
+          "isSelected": false
+        },
+        {
+          "value": "small",
+          "label": "S",
+          "isSelected": false
+        },
+        {
+          "value": "medium",
+          "label": "M",
+          "isSelected": false
+        },
+        {
+          "value": "large",
+          "label": "L",
+          "isSelected": false
+        },
+        {
+          "value": "extra large",
+          "label": "XL",
+          "isSelected": false
+        }
+      ]
     }
   ]
 }

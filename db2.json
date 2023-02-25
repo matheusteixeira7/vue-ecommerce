@@ -1,235 +1,546 @@
 {
-    "navigation-bar": {
-        "shop": [
-            {
-                "name": "Bags",
-                "href": "#"
-            },
-            {
-                "name": "Tees",
-                "href": "#"
-            },
-            {
-                "name": "Objects",
-                "href": "#"
-            },
-            {
-                "name": "Home Goods",
-                "href": "#"
-            },
-            {
-                "name": "Accessories",
-                "href": "#"
-            }
-        ],
-        "company": [
-            {
-                "name": "Who we are",
-                "href": "#"
-            },
-            {
-                "name": "Sustainability",
-                "href": "#"
-            },
-            {
-                "name": "Press",
-                "href": "#"
-            },
-            {
-                "name": "Careers",
-                "href": "#"
-            },
-            {
-                "name": "Terms & Conditions",
-                "href": "#"
-            },
-            {
-                "name": "Privacy",
-                "href": "#"
-            }
-        ],
-        "account": [
-            {
-                "name": "Manage Account",
-                "href": "#"
-            },
-            {
-                "name": "Returns & Exchanges",
-                "href": "#"
-            },
-            {
-                "name": "Redeem a Gift Card",
-                "href": "#"
-            }
-        ],
-        "connect": [
-            {
-                "name": "Contact Us",
-                "href": "#"
-            },
-            {
-                "name": "Twitter",
-                "href": "#"
-            },
-            {
-                "name": "Instagram",
-                "href": "#"
-            },
-            {
-                "name": "Pinterest",
-                "href": "#"
-            }
-        ]
-    },
-    "cart": [
-        {
-            "category": "Tees",
-            "color": "Sienna",
-            "href": "#",
-            "id": "1",
-            "imageAlt": "Front of men's Basic Tee in sienna.",
-            "imageSrc": "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-01.jpg",
-            "inStock": true,
-            "name": "Basic Tee",
-            "price": 30,
-            "quantity": 1,
-            "size": "Large"
-        },
-        {
-            "id": "2",
-            "name": "Premium Tee",
-            "href": "#",
-            "price": 70,
-            "color": "Black",
-            "inStock": false,
-            "leadTime": "3–4 weeks",
-            "size": "Large",
-            "imageSrc": "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-02.jpg",
-            "imageAlt": "Front of men's Basic Tee in black.",
-            "quantity": 1
-        },
-        {
-            "category": "Tumbler",
-            "color": "White",
-            "href": "#",
-            "id": "3",
-            "imageAlt": "Insulated bottle with white base and black snap lid.",
-            "imageSrc": "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-03.jpg",
-            "inStock": true,
-            "name": "Nomad Tumbler",
-            "price": 35,
-            "quantity": 2
-        }
+  "navigation-bar": {
+    "shop": [
+      {
+        "name": "Bags",
+        "href": "#"
+      },
+      {
+        "name": "Tees",
+        "href": "#"
+      },
+      {
+        "name": "Objects",
+        "href": "#"
+      },
+      {
+        "name": "Home Goods",
+        "href": "#"
+      },
+      {
+        "name": "Accessories",
+        "href": "#"
+      }
     ],
-    "products": [
+    "company": [
+      {
+        "name": "Who we are",
+        "href": "#"
+      },
+      {
+        "name": "Sustainability",
+        "href": "#"
+      },
+      {
+        "name": "Press",
+        "href": "#"
+      },
+      {
+        "name": "Careers",
+        "href": "#"
+      },
+      {
+        "name": "Terms & Conditions",
+        "href": "#"
+      },
+      {
+        "name": "Privacy",
+        "href": "#"
+      }
+    ],
+    "account": [
+      {
+        "name": "Manage Account",
+        "href": "#"
+      },
+      {
+        "name": "Returns & Exchanges",
+        "href": "#"
+      },
+      {
+        "name": "Redeem a Gift Card",
+        "href": "#"
+      }
+    ],
+    "connect": [
+      {
+        "name": "Contact Us",
+        "href": "#"
+      },
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      },
+      {
+        "name": "Pinterest",
+        "href": "#"
+      }
+    ]
+  },
+  "cart": [
+    {
+      "category": "Tees",
+      "color": "Sienna",
+      "href": "#",
+      "id": "1",
+      "imageAlt": "Front of men's Basic Tee in sienna.",
+      "imageSrc": "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-01.jpg",
+      "inStock": true,
+      "name": "Basic Tee",
+      "price": 30,
+      "quantity": 1,
+      "size": "Large"
+    },
+    {
+      "id": "2",
+      "name": "Premium Tee",
+      "href": "#",
+      "price": 70,
+      "color": "Black",
+      "inStock": false,
+      "leadTime": "3–4 weeks",
+      "size": "Large",
+      "imageSrc": "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-02.jpg",
+      "imageAlt": "Front of men's Basic Tee in black.",
+      "quantity": 1
+    },
+    {
+      "category": "Tumbler",
+      "color": "White",
+      "href": "#",
+      "id": "3",
+      "imageAlt": "Insulated bottle with white base and black snap lid.",
+      "imageSrc": "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-03.jpg",
+      "inStock": true,
+      "name": "Nomad Tumbler",
+      "price": 35,
+      "quantity": 1
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "category": "men",
+      "subcategory": "tees",
+      "size": "large",
+      "name": "Striped Logo Icon Crew T-Shirt",
+      "price": 19.95,
+      "rating": 4,
+      "images": [
         {
-            "id": "1",
-            "category": "Knife Set",
-            "size": "Large",
-            "name": "HENCKELS Premium Quality 15-Piece Knife Set with Block, Razor-Sharp",
-            "price": 140,
-            "rating": 4,
-            "images": [
-                {
-                    "id": "db7527b2-c870-425c-9b65-c20cc2d88541",
-                    "name": "Angled view",
-                    "src": "https://m.media-amazon.com/images/I/71FtjejRbvL._AC_SL1500_.jpg",
-                    "alt": "Angled front view with bag zipped and handles upright."
-                },
-                {
-                    "id": "281b985b-f1e4-4770-b07b-b2c86191af73",
-                    "name": "Angled view",
-                    "src": "https://m.media-amazon.com/images/I/61lfUr7ZOTL._AC_SL1280_.jpg",
-                    "alt": "Angled front view with bag zipped and handles upright."
-                },
-                {
-                    "id": "56a45cb6-3c0a-4582-9db8-aeea5c864693",
-                    "name": "Angled view",
-                    "src": "https://m.media-amazon.com/images/I/71XuM1JovwL._AC_SL1280_.jpg",
-                    "alt": "Angled front view with bag zipped and handles upright.",
-                    "size": "Large"
-                }
-            ],
-            "colors": [
-                {
-                    "name": "Natural",
-                    "bgColor": "bg-gray-700",
-                    "selectedColor": "ring-gray-700"
-                },
-                {
-                    "name": "White",
-                    "bgColor": "bg-white",
-                    "selectedColor": "ring-gray-400"
-                },
-                {
-                    "name": "Washed Gray",
-                    "bgColor": "bg-gray-600",
-                    "selectedColor": "ring-gray-500"
-                }
-            ],
-            "description": "\n    <p>The Zip Tote Basket is the perfect midpoint between shopping tote and comfy backpack. With convertible straps, you can hand carry, should sling, or backpack this convenient and spacious bag. The zip top and durable canvas construction keeps your goods protected for all-day use.</p>\n  ",
-            "details": [
-                {
-                    "name": "Features",
-                    "items": [
-                        "Multiple strap configurations",
-                        "Spacious interior with top zip",
-                        "Leather handle and tabs",
-                        "Interior dividers",
-                        "Stainless strap loops",
-                        "Double stitched construction",
-                        "Water-resistant"
-                    ]
-                }
-            ]
+          "id": "db7527b2-c870-425c-9b65-c20cc2d88541",
+          "name": "Angled view",
+          "src": "https://img.abercrombie.com/is/image/anf/KIC_324-3938-1220-104_prod1?policy=product-medium",
+          "alt": "alt content"
         },
         {
-            "id": "2",
-            "category": "Basket",
-            "size": "Large",
-            "name": "Zip Tote Basket 2",
-            "price": 140,
-            "rating": 4,
-            "images": [
-                {
-                    "id": "c5dc52b0-752d-4ce3-a798-3ce3bc59873d",
-                    "name": "Angled view",
-                    "src": "https://tailwindui.com/img/ecommerce-images/product-page-03-product-01.jpg",
-                    "alt": "Angled front view with bag zipped and handles upright."
-                }
-            ],
-            "colors": [
-                {
-                    "name": "Washed Black",
-                    "bgColor": "bg-gray-700",
-                    "selectedColor": "ring-gray-700"
-                },
-                {
-                    "name": "White",
-                    "bgColor": "bg-white",
-                    "selectedColor": "ring-gray-400"
-                },
-                {
-                    "name": "Washed Gray",
-                    "bgColor": "bg-gray-500",
-                    "selectedColor": "ring-gray-500"
-                }
-            ],
-            "description": "The Zip Tote Basket is the perfect midpoint between shopping tote and comfy backpack. With convertible straps, you can hand carry, should sling, or backpack this convenient and spacious bag. The zip top and durable canvas construction keeps your goods protected for all-day use.",
-            "details": [
-                {
-                    "name": "Features",
-                    "items": [
-                        "Multiple strap configurations",
-                        "Spacious interior with top zip",
-                        "Leather handle and tabs",
-                        "Interior dividers",
-                        "Stainless strap loops",
-                        "Double stitched construction",
-                        "Water-resistant"
-                    ]
-                }
-            ]
+          "id": "281b985b-f1e4-4770-b07b-b2c86191af73",
+          "name": "Light Brown Stripe",
+          "src": "https://img.hollisterco.com/is/image/anf/KIC_324-3938-1220-404_prod1?policy=product-large",
+          "alt": "alt content"
         }
+      ],
+      "colors": [
+        {
+          "name": "White Stripe",
+          "bgColor": "bg-gray-700",
+          "selectedColor": "ring-gray-700"
+        },
+        {
+          "name": "Dark Teal Stripe",
+          "bgColor": "bg-white",
+          "selectedColor": "ring-gray-400"
+        },
+        {
+          "name": "Washed Gray",
+          "bgColor": "bg-gray-600",
+          "selectedColor": "ring-gray-500"
+        }
+      ],
+      "description": "Comfortable and super soft, this t-shirt features a classic striped pattern and embroidered left chest logo icon. Short sleeves, crew neckline. Imported.",
+      "details": [
+        {
+          "name": "Features",
+          "items": [
+            "Multiple strap configurations",
+            "Spacious interior with top zip",
+            "Leather handle and tabs",
+            "Interior dividers",
+            "Stainless strap loops",
+            "Double stitched construction",
+            "Water-resistant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "men",
+      "subcategory": "polos",
+      "size": "large",
+      "name": "Logo Icon Polo",
+      "price": 24.95,
+      "rating": 5,
+      "images": [
+        {
+          "id": "db7527b2-c870-425c-9b65-c20cc2d88541",
+          "name": "Green Polo",
+          "src": "https://img.abercrombie.com/is/image/anf/KIC_324-3933-1005-332_prod1?policy=product-medium",
+          "alt": "alt content"
+        },
+        {
+          "id": "281b985b-f1e4-4770-b07b-b2c86191af73",
+          "name": "Rose Polo",
+          "src": "https://img.abercrombie.com/is/image/anf/KIC_324-3933-1005-600_prod1?policy=product-medium",
+          "alt": "alt content"
+        }
+      ],
+      "colors": [
+        {
+          "name": "White Stripe",
+          "bgColor": "bg-gray-700",
+          "selectedColor": "ring-gray-700"
+        },
+        {
+          "name": "Dark Teal Stripe",
+          "bgColor": "bg-white",
+          "selectedColor": "ring-gray-400"
+        },
+        {
+          "name": "Washed Gray",
+          "bgColor": "bg-gray-600",
+          "selectedColor": "ring-gray-500"
+        }
+      ],
+      "description": "Comfortable and super soft, this t-shirt features a classic striped pattern and embroidered left chest logo icon. Short sleeves, crew neckline. Imported.",
+      "details": [
+        {
+          "name": "Features",
+          "items": [
+            "Multiple strap configurations",
+            "Spacious interior with top zip",
+            "Leather handle and tabs",
+            "Interior dividers",
+            "Stainless strap loops",
+            "Double stitched construction",
+            "Water-resistant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "women",
+      "subcategory": "sweaters",
+      "size": "small",
+      "name": "Crop Floral Pattern Cardigan",
+      "price": 44.95,
+      "rating": 5,
+      "images": [
+        {
+          "id": "db7527b2-c870-425c-9b65-c20cc2d88541",
+          "name": "Green Polo",
+          "src": "https://img.abercrombie.com/is/image/anf/KIC_350-3070-1368-608_model2?policy=product-medium",
+          "alt": "alt content"
+        }
+      ],
+      "colors": [
+        {
+          "name": "White Stripe",
+          "bgColor": "bg-gray-700",
+          "selectedColor": "ring-gray-700"
+        },
+        {
+          "name": "Dark Teal Stripe",
+          "bgColor": "bg-white",
+          "selectedColor": "ring-gray-400"
+        },
+        {
+          "name": "Washed Gray",
+          "bgColor": "bg-gray-600",
+          "selectedColor": "ring-gray-500"
+        }
+      ],
+      "description": "Comfortable and super soft, this t-shirt features a classic striped pattern and embroidered left chest logo icon. Short sleeves, crew neckline. Imported.",
+      "details": [
+        {
+          "name": "Features",
+          "items": [
+            "Multiple strap configurations",
+            "Spacious interior with top zip",
+            "Leather handle and tabs",
+            "Interior dividers",
+            "Stainless strap loops",
+            "Double stitched construction",
+            "Water-resistant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "women",
+      "subcategory": "bottoms",
+      "size": "large",
+      "name": "Ultra High-Rise Cargo Dad Pants",
+      "price": 59.95,
+      "rating": 5,
+      "images": [
+        {
+          "id": "db7527b2-c870-425c-9b65-c20cc2d88541",
+          "name": "Green Polo",
+          "src": "https://img.abercrombie.com/is/image/anf/KIC_356-3003-0320-301_model2?policy=product-medium",
+          "alt": "alt content"
+        }
+      ],
+      "colors": [
+        {
+          "name": "White Stripe",
+          "bgColor": "bg-gray-700",
+          "selectedColor": "ring-gray-700"
+        },
+        {
+          "name": "Dark Teal Stripe",
+          "bgColor": "bg-white",
+          "selectedColor": "ring-gray-400"
+        },
+        {
+          "name": "Washed Gray",
+          "bgColor": "bg-gray-600",
+          "selectedColor": "ring-gray-500"
+        }
+      ],
+      "description": "Comfortable and super soft, this t-shirt features a classic striped pattern and embroidered left chest logo icon. Short sleeves, crew neckline. Imported.",
+      "details": [
+        {
+          "name": "Features",
+          "items": [
+            "Multiple strap configurations",
+            "Spacious interior with top zip",
+            "Leather handle and tabs",
+            "Interior dividers",
+            "Stainless strap loops",
+            "Double stitched construction",
+            "Water-resistant"
+          ]
+        }
+      ]
+    }
+  ],
+  "discount": [
+    {
+      "id": "1",
+      "code": "SUMMER20",
+      "amount": 10
+    },
+    {
+      "id": "2",
+      "code": "SUMMER21",
+      "amount": 20
+    },
+    {
+      "id": "3",
+      "code": "SUMMER22",
+      "amount": 30
+    }
+  ],
+  "filters": {
+    "men": [
+      {
+        "id": "color",
+        "name": "Color",
+        "options": [
+          {
+            "value": "white",
+            "label": "White",
+            "isSelected": false
+          },
+          {
+            "value": "beige",
+            "label": "Beige",
+            "isSelected": false
+          },
+          {
+            "value": "blue",
+            "label": "Blue",
+            "isSelected": false
+          },
+          {
+            "value": "brown",
+            "label": "Brown",
+            "isSelected": false
+          },
+          {
+            "value": "green",
+            "label": "Green",
+            "isSelected": false
+          },
+          {
+            "value": "purple",
+            "label": "Purple",
+            "isSelected": false
+          }
+        ]
+      },
+      {
+        "id": "category",
+        "name": "Subcategory",
+        "options": [
+          {
+            "value": "tees",
+            "label": "Tees",
+            "isSelected": false
+          },
+          {
+            "value": "bottoms",
+            "label": "Bottoms",
+            "isSelected": false
+          },
+          {
+            "value": "polos",
+            "label": "Polos",
+            "isSelected": false
+          },
+          {
+            "value": "pants-shorts",
+            "label": "Pants & Shorts",
+            "isSelected": false
+          }
+        ]
+      },
+      {
+        "id": "size",
+        "name": "Size",
+        "options": [
+          {
+            "value": "extra small",
+            "label": "XS",
+            "isSelected": false
+          },
+          {
+            "value": "small",
+            "label": "S",
+            "isSelected": false
+          },
+          {
+            "value": "medium",
+            "label": "M",
+            "isSelected": false
+          },
+          {
+            "value": "large",
+            "label": "L",
+            "isSelected": false
+          },
+          {
+            "value": "extra large",
+            "label": "XL",
+            "isSelected": false
+          }
+        ]
+      }
+    ],
+    "women": [
+      {
+        "id": "color",
+        "name": "Color",
+        "category": "women",
+        "options": [
+          {
+            "value": "white",
+            "label": "White",
+            "isSelected": false
+          },
+          {
+            "value": "beige",
+            "label": "Beige",
+            "isSelected": false
+          },
+          {
+            "value": "blue",
+            "label": "Blue",
+            "isSelected": false
+          },
+          {
+            "value": "brown",
+            "label": "Brown",
+            "isSelected": false
+          },
+          {
+            "value": "green",
+            "label": "Green",
+            "isSelected": false
+          },
+          {
+            "value": "purple",
+            "label": "Purple",
+            "isSelected": false
+          }
+        ]
+      },
+      {
+        "id": "subcategory",
+        "name": "Subcategory",
+        "category": "women",
+        "options": [
+          {
+            "value": "tees",
+            "label": "Tees",
+            "isSelected": false
+          },
+          {
+            "value": "bottoms",
+            "label": "Bottoms",
+            "isSelected": false
+          },
+          {
+            "value": "sweaters",
+            "label": "Sweaters",
+            "isSelected": false
+          },
+          {
+            "value": "pants-shorts",
+            "label": "Pants & Shorts",
+            "isSelected": false
+          }
+        ]
+      },
+      {
+        "id": "size",
+        "name": "Size",
+        "category": "women",
+        "options": [
+          {
+            "value": "extra small",
+            "label": "XS",
+            "isSelected": false
+          },
+          {
+            "value": "small",
+            "label": "S",
+            "isSelected": false
+          },
+          {
+            "value": "medium",
+            "label": "M",
+            "isSelected": false
+          },
+          {
+            "value": "large",
+            "label": "L",
+            "isSelected": false
+          },
+          {
+            "value": "extra large",
+            "label": "XL",
+            "isSelected": false
+          }
+        ]
+      }
     ]
+  }
 }
