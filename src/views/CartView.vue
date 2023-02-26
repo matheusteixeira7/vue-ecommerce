@@ -280,6 +280,7 @@ export default defineComponent({
     XMarkIconMini,
     NavigationBar,
   },
+
   data() {
     return {
       relatedProducts: [] as ProductInterface[],
@@ -288,6 +289,7 @@ export default defineComponent({
       qtdOptions: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     };
   },
+
   methods: {
     async fetchData() {
       const cartData = await axios.get("/cart");
